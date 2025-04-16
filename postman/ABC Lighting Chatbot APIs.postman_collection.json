@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "3b758277-0934-4165-9642-557f0495f33c",
+		"name": "ABC Lighting Chatbot APIs",
+		"description": "This collection contains all user and admin API endpoints used in the ABC Lighting chatbot project.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43938444",
+		"_collection_link": "https://deepak-2125034.postman.co/workspace/554e5223-1347-4652-873a-3d2b15edecab/collection/43938444-3b758277-0934-4165-9642-557f0495f33c?action=share&source=collection_link&creator=43938444"
+	},
+	"item": [
+		{
+			"name": "User APIs",
+			"item": [
+				{
+					"name": "Chat Response 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/chat?query=Do you have any solar related products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"chat"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Do you have any solar related products"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chat Response 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/chat?query=no",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"chat"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "no"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Chat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": {\"name\": \"John Doe\", \"email\": \"john@example.com\"},\r\n  \"messages\": [\r\n    {\"role\": \"user\", \"content\": \"Tell me about Solar Street Light.\"},\r\n    {\"role\": \"bot\", \"content\": \"We have Solar Street Light...\"}\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/chat/save",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"chat",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/image?key=products/street_light.jpg",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"image"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "products/street_light.jpg"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin APIs",
+			"item": [
+				{
+					"name": "admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0NzQyNjQyLCJleHAiOjE3NDQ3NDYyNDJ9.Nmv71i8XVEvGFeJ8nDtpawKfJpKX9MohBOZ-i0XrSCg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"PROD5\",\r\n  \"name\": \"Tube-Light\",\r\n  \"description\": \"A durable, long-lasting tube light.\",\r\n  \"specs\": {\"wattage\": 15, \"runtime\": \"10 hours\"},\r\n  \"imageKey\": \"products/wall_light.jpg\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/product",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0NzQyNjQyLCJleHAiOjE3NDQ3NDYyNDJ9.Nmv71i8XVEvGFeJ8nDtpawKfJpKX9MohBOZ-i0XrSCg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"PROD5\",\r\n  \"name\": \"UPDATED Tube-Light 2.0\",\r\n  \"description\": \"Extra durable, long-lasting tube light.\",\r\n  \"specs\": {\"wattage\": 15, \"runtime\": \"10 hours\"},\r\n  \"imageKey\": \"products/wall_light.jpg\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/product/PROD5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"product",
+								"PROD5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0NzQyNjQyLCJleHAiOjE3NDQ3NDYyNDJ9.Nmv71i8XVEvGFeJ8nDtpawKfJpKX9MohBOZ-i0XrSCg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/admin/product/PROD5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"product",
+								"PROD5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update parent (CompanyInfo)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0NzQyNjQyLCJleHAiOjE3NDQ3NDYyNDJ9.Nmv71i8XVEvGFeJ8nDtpawKfJpKX9MohBOZ-i0XrSCg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"id\": \"company\",\r\n \"about\": \"ABC Lighting Corp. is a leading provider of innovative and energy-efficient outdoor lighting solutions. Specializing in solar-powered and smart lighting products, the company is committed to illuminating spaces while promoting sustainability. With a strong focus on quality, durability, and cutting-edge technology, ABC Lighting offers a wide range of products tailored for streets, driveways, parks, and commercial spaces.\",\r\n \"company\": \"ABC Lighting Corp\",\r\n \"hours\": \"mon-fri : 9am to 4pm , sat : 9am to 12pm\",\r\n \"locations\": [\r\n  \"24/55#, Vizag\",\"531021 super house , andhra pradesh\"\r\n ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/parent",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"parent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

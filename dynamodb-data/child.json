@@ -1,0 +1,11 @@
+{
+    "id": "PROD1",
+    "description": "High-efficiency solar powered street light that delivers bright illumination for urban roads. Measures 2 meters tall and provides about 10 hours of light per night.",
+    "imageKey": "products/street_light.jpg",
+    "name": "Solar Powered Street Light",
+    "specs": {
+     "height": "2 meters",
+     "runtime": "10 hours",
+     "wattage": 20
+    }
+   }

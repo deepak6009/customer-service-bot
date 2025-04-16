@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ABC Lighting Chatbot</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    #chatWindow {
+      border: 1px solid #ccc;
+      padding: 10px;
+      height: 300px;
+      overflow-y: auto;
+      background: #f8f9fa;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">ABC Lighting Chatbot</h1>
+    <div id="chatWindow" class="mb-3"></div>
+    <div class="input-group mb-3">
+      <input type="text" id="userInput" class="form-control" placeholder="Type your message">
+      <div class="input-group-append">
+        <button id="sendBtn" class="btn btn-primary">Send</button>
+      </div>
+    </div>
+    <!-- Hidden form for user details when the conversation ends -->
+    <div id="userInfo" style="display:none;">
+      <h3>Please provide your contact details</h3>
+      <div class="form-group">
+        <input type="text" id="userName" class="form-control" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" id="userEmail" class="form-control" placeholder="Your Email" required>
+      </div>
+      <button id="saveChatBtn" class="btn btn-success">Save Chat</button>
+    </div>
+  </div>
+  
+  <!-- jQuery and Bootstrap JS CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="user.js"></script>
+</body>
+</html>

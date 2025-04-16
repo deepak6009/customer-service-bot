@@ -1,0 +1,10 @@
+{
+    "id": "company",
+    "about": "ABC Lighting Corp. is a leading provider of innovative and energy-efficient outdoor lighting solutions. Specializing in solar-powered and smart lighting products, the company is committed to illuminating spaces while promoting sustainability. With a strong focus on quality, durability, and cutting-edge technology, ABC Lighting offers a wide range of products tailored for streets, driveways, parks, and commercial spaces.",
+    "company": "ABC Lighting Corp",
+    "hours": "mon-fri : 9am to 4pm , sat : 9am to 12pm",
+    "locations": [
+     "24/55#, Vizag",
+     "531021 super house , andhra pradesh"
+    ]
+   }

@@ -1,0 +1,21 @@
+{
+  "name": "chatbot-lambda",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@vendia/serverless-express": "^4.12.6",
+    "aws-sdk": "^2.1498.0",
+    "body-parser": "^2.2.0",
+    "bootstrap": "^5.3.5",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

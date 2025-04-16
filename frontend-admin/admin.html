@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - ABC Lighting</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <!-- Admin Login Section -->
+    <div id="loginSection">
+      <h1 class="mb-4">Admin Login</h1>
+      <form id="loginForm">
+        <div class="form-group">
+          <input type="text" id="username" class="form-control" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" class="form-control" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+    </div>
+
+    <!-- Admin Functions Section: Hidden Until Login -->
+    <div id="adminFunctions" style="display: none;">
+      <h2 class="mt-4">Product Management</h2>
+      <form id="productForm">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <input type="text" id="prodId" class="form-control" placeholder="Product ID" required>
+          </div>
+          <div class="form-group col-md-4">
+            <input type="text" id="prodName" class="form-control" placeholder="Name" required>
+          </div>
+          <div class="form-group col-md-4">
+            <input type="text" id="prodDesc" class="form-control" placeholder="Description" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" id="prodSpecs" class="form-control" placeholder='Specifications (JSON)' required>
+          </div>
+          <div class="form-group col-md-6">
+            <input type="text" id="prodImageKey" class="form-control" placeholder="Image Key (e.g., products/street_light.jpg)" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Add Product</button>
+        <button type="button" id="updateBtn" class="btn btn-warning">Update Product</button>
+        <button type="button" id="deleteBtn" class="btn btn-danger">Delete Product</button>
+      </form>
+
+      <hr class="my-4">
+      
+      <!-- New Section for Parent (Company) Data -->
+      <h2>Update Company Info</h2>
+      <form id="parentForm">
+        <div class="form-group">
+          <label for="parentCompany">Company Name</label>
+          <input type="text" id="parentCompany" class="form-control" placeholder="ABC Lighting Corp" required>
+        </div>
+        <div class="form-group">
+          <label for="parentLocations">Locations</label>
+          <input type="text" id="parentLocations" class="form-control" placeholder="Comma-separated list, e.g., 123 Solar St, 456 Light Blvd" required>
+        </div>
+        <div class="form-group">
+          <label for="parentHours">Business Hours</label>
+          <input type="text" id="parentHours" class="form-control" placeholder="e.g., Mon-Fri: 9AM - 6PM, Sat: 10AM - 4PM" required>
+        </div>
+        <div class="form-group">
+          <label for="parentAbout">About the Company</label>
+          <textarea id="parentAbout" class="form-control" placeholder="Company description..." rows="3" required></textarea>
+        </div>
+        <button type="button" id="updateParentBtn" class="btn btn-info">Update Company Info</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Bootstrap & jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
